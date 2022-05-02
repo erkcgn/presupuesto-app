@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cabecero',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceroComponent implements OnInit {
 
+  @Input() presupuestoTotal:number;
+  @Input() ingresoTotal:number;
+  @Input() egresoTotal:number;
+  @Input() porcentajeTotal:number;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+
+function input() {
+  throw new Error('Function not implemented.');
+}
+
