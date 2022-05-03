@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Egreso } from './egreso.model';
+import { EgresoServicio } from './egreso.servicio';
 
 @Component({
   selector: 'app-egreso',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./egreso.component.css']
 })
 export class EgresoComponent implements OnInit {
+  
+  egresos:Egreso[] = [];
 
-  constructor() { }
+  constructor(private egresoServicio:EgresoServicio) { }
 
   ngOnInit(): void {
+    this.egresos = this.egresoServicio.egresos;
+  }
+  eliminarEgreso(egreso:Egreso){
+    this.egresoServicio.eliminar(egreso);
   }
 
 }
