@@ -21,7 +21,7 @@ export class EgresoComponent implements OnInit {
     this.egresoServicio.eliminar(egreso);
   }
   
-  calcularPorcentaje(egreso:Egreso){
+  calcularPorcentaje(egreso: Egreso){
     return egreso.valor/this.ingresoTotal;
   }
 }
